@@ -1,12 +1,9 @@
-import Particles from "react-tsparticles";
-
 import Card from './components/Card';
 import Hero from './components/Hero';
 import Info from './components/Info';
 import Image from './components/Image';
 import Particle from './components/Particle';
 import { cards } from './utils/cards';
-import { particlesConfig } from './utils/particles-config';
 import './App.css';
 
 function App() {

@@ -9,7 +9,7 @@ export default function Image({ ratio, src }) {
                     }}
                 >
                     <div className="ratio-inner">
-                        <img src={src} />
+                        <img src={src} alt="" />
                     </div>
                 </div>
             </div>
