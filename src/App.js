@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+import Particles from "react-tsparticles";
+
+import Card from './components/Card';
+import Hero from './components/Hero';
+import Info from './components/Info';
+import Image from './components/Image';
+import Particle from './components/Particle';
+import { cards } from './utils/cards';
+import { particlesConfig } from './utils/particles-config';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='main'>
+      <Particle />
+      <Hero>
+          <div className='container'>
+            <Info />
+            <div className='row'>
+              {cards.map((card, i) => (
+                <div className='column' key={i}>
+                  <Card>
+                    <div className='card-title'>{card.title}</div>
+                    <div className='card-body'>{card.description}</div>
+                    <Image ratio={card.imageRatio} src={card.image} />
+                  </Card>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Hero>
     </div>
   );
 }
